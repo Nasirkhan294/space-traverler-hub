@@ -1,20 +1,35 @@
-import { Link } from 'react-router-dom';
+import { styled } from 'styled-components';
+import NavLink from './NavLink';
 
 const Navbar = () => (
-  <header className="nav-container">
+  <Header>
     <div className="thumbnail-wrapper">
-      <img src="" alt="" />
+      <div>
+        <img src="" alt="logo" />
+      </div>
+      <span>Space travelers hub</span>
     </div>
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li><Link to="/mission">Mission</Link></li>
-        <li><Link to="/rockets">Rockets</Link></li>
-      </ul>
+      <NavLink />
     </nav>
-  </header>
+  </Header>
 );
 
 export default Navbar;
+
+const Header = styled.header`
+width: 100%;
+height: 56px;
+background-color: #9e9797;
+padding: 0 4rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+.thumbnail-wrapper{
+  display: flex;
+  gap: 10px;
+}
+
+
+`;
