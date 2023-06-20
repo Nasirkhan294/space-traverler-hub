@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import NavLink from './NavLink';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <Header>
@@ -10,7 +10,17 @@ const Navbar = () => (
       <span>Space travelers hub</span>
     </div>
     <nav>
-      <NavLink />
+      <Ul>
+        <li>
+          <NavLink exact="true" activeclassname="active" className="link" to="/">Rockets</NavLink>
+        </li>
+        <li>
+          <NavLink activeclassname="active" className="link" to="/mission">Mission</NavLink>
+        </li>
+        <li>
+          <NavLink activeclassname="active" className="link" to="/profile">My Profile</NavLink>
+        </li>
+      </Ul>
     </nav>
   </Header>
 );
@@ -31,5 +41,21 @@ justify-content: space-between;
   gap: 10px;
 }
 
+
+`;
+
+const Ul = styled.ul`
+display: flex;
+gap: 10px;
+list-style: none;
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  color: blue
+}
 
 `;
