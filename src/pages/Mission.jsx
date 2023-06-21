@@ -1,5 +1,7 @@
+import MissionList from '../components/mission/MissionList';
+
 const Mission = () => (
-  <div>Mission</div>
+  <div><MissionList /></div>
 
 );
 
