@@ -13,6 +13,7 @@ export default function Rockets({ rockets }) {
           <h3>{rockets.title}</h3>
           <p>
             {rockets.detail}
+            hi
           </p>
           <div className="btn-container">
             <button type="button">Reserve Rocket</button>
