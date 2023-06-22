@@ -1,19 +1,17 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import img from '../../assets/space.jpg';
 
 export default function Rockets({ rockets }) {
   return (
     <Div>
       <div className="container">
         <div className="img-container">
-          <img src={img} alt="something" />
+          <img src={rockets.flickr_images[0]} alt="something" />
         </div>
         <div className="detail-container">
-          <h3>{rockets.title}</h3>
+          <h3>{rockets.name}</h3>
           <p>
-            {rockets.detail}
-            hi
+            {rockets.details}
           </p>
           <div className="btn-container">
             <button type="button">Reserve Rocket</button>
@@ -33,13 +31,17 @@ display: flex;
     display: flex;
     padding: 1rem 3rem;
     gap: 15px;
-   
+  
 
     .img-container{
-        width: 50%;
+      
+      display: flex;
+      align-items: center;
+      
         img{
-            width: 100%;
-            height: auto;
+          width: 300px;
+          height: 190px;
+          object-fit: cover;
         }
     }
 

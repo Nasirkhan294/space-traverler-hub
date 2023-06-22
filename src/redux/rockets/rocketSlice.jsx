@@ -1,32 +1,49 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const url = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = {
-  rockets: [{
-    id: 1,
-    title: 'falcon 1',
-    detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis beatae rerum earum ad blanditiis dolor suscipit laboriosam explicabo magnam vero, porro  mollitia aut ratione iure ducimus quod provident aliquid reiciendis.',
-  },
-  {
-    id: 2,
-    title: 'falcon 1',
-    detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis beatae rerum earum ad blanditiis dolor suscipit laboriosam explicabo magnam vero, porro  mollitia aut ratione iure ducimus quod provident aliquid reiciendis.',
-  },
-  {
-    id: 3,
-    title: 'falcon 1',
-    detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis beatae rerum earum ad blanditiis dolor suscipit laboriosam explicabo magnam vero, porro  mollitia aut ratione iure ducimus quod provident aliquid reiciendis.',
-  },
-  {
-    id: 4,
-    title: 'falcon 1',
-    detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis beatae rerum earum ad blanditiis dolor suscipit laboriosam explicabo magnam vero, porro  mollitia aut ratione iure ducimus quod provident aliquid reiciendis.',
-  }],
+  rockets: [],
+  isLoading: false,
 };
+
+export const getRockets = createAsyncThunk('book/getBooks', async (_, thunkAPI) => {
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
 const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
   reducers: {
 
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getRockets.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(getRockets.fulfilled, (state, action) => ({
+        ...state,
+        rockets: action.payload.map((rocket) => ({
+          id: rocket.id,
+          name: rocket.rocket_name,
+          type: rocket.rocket_type,
+          flickr_images: rocket.flickr_images,
+          details: rocket.description,
+        })),
+        isLoading: false,
+      }))
+      .addCase(getRockets.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }));
   },
 });
 
