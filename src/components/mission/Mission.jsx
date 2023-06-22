@@ -1,28 +1,30 @@
-import { styled } from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Mission = ({
-  title, description, status, action,
-}) => (
-  <DIV>
-    <span className="title">{title}</span>
-    <span className="description">{description}</span>
-    <span className="status">{status}</span>
-    <span className="action">{action}</span>
-  </DIV>
+const Mission = ({ title, description }) => (
+  <>
+    <td>{title}</td>
+    <td>{description}</td>
+    <td><span>NOT A MEMBER</span></td>
+    <td>
+      <button
+        type="button"
+        style={{
+          border: '2px solid #6D757E',
+          padding: '1rem 1.5rem',
+          backgroundColor: '#fff',
+          color: '#000',
+          fontSize: '1.2rem',
+        }}
+      >
+        Join mission
+      </button>
+    </td>
+  </>
 );
 
 Mission.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
-  action: PropTypes.string.isRequired,
 };
 
 export default Mission;
-
-const DIV = styled.div`
-  diplay: grid;
-  grid-template-column: repeat(50px 1fr 50px 50px);
-  gap: 1rem;
-`;
