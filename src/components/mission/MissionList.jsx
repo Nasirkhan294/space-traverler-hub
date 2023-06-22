@@ -13,15 +13,18 @@ const MissionList = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    <p>Loading...</p>;
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    <p>
-      `Error
-      {error.message}
-      `
-    </p>;
+    return (
+      <p>
+        `
+        Error
+        {error.message}
+        `
+      </p>
+    );
   }
 
   return (
@@ -39,6 +42,7 @@ const MissionList = () => {
           {missions.map((mission) => (
             <tr key={mission.mission_id}>
               <Mission
+                missionId={mission.mission_id}
                 title={mission.mission_name}
                 description={mission.description}
               />
@@ -66,6 +70,7 @@ const DIV = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     color: #fff;
+    word-spacing: 0;
   }
 
   table, th, td {
@@ -104,4 +109,19 @@ const DIV = styled.div`
     background-color: #F2F2F2;
   }
 
+  .btn {
+  border: 2px solid #6D757E;
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #6D757E;
+  border-color: #000;
+  color: #fff;
+  transition: 0.3s ease all;
+ }
 `;
