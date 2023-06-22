@@ -12,7 +12,7 @@ const Mission = ({ title, description }) => (
           border: '2px solid #6D757E',
           padding: '1rem 1.5rem',
           backgroundColor: '#fff',
-          color: '#000',
+          color: '#000000',
           fontSize: '1.2rem',
         }}
       >
