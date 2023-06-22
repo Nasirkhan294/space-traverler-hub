@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reservedMission } from '../../redux/mission/missionSlice';
+import { joinMission, leaveMission } from '../../redux/mission/missionSlice';
 
 const Mission = ({ missionId, title, description }) => {
   const dispatch = useDispatch();
   const [isJoined, setIsJoined] = useState(false);
-  const buttonText = isJoined ? 'Joined Mission' : 'Join Mission';
+  const buttonText = isJoined ? 'Leave Mission' : 'Join Mission';
 
   const handleJoinMission = () => {
-    dispatch(reservedMission(missionId));
-    setIsJoined(true);
+    if (isJoined) {
+      dispatch(leaveMission(missionId));
+    } else {
+      dispatch(joinMission(missionId));
+    }
+    setIsJoined(!isJoined);
   };
 
   return (
