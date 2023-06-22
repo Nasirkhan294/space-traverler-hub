@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -21,6 +22,26 @@ const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
   reducers: {
+    reserveRocket: (state, action) => {
+      const newRocket = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+      return {
+        ...state,
+        rockets: newRocket,
+      };
+    },
+    leaveRocket: (state, action) => {
+      const newRocket = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return {
+        ...state,
+        rockets: newRocket,
+      };
+    },
 
   },
   extraReducers: (builder) => {
@@ -37,6 +58,7 @@ const rocketSlice = createSlice({
           type: rocket.rocket_type,
           flickr_images: rocket.flickr_images,
           details: rocket.description,
+          reserved: false,
         })),
         isLoading: false,
       }))
@@ -47,4 +69,5 @@ const rocketSlice = createSlice({
   },
 });
 
+export const { reserveRocket, leaveRocket } = rocketSlice.actions;
 export default rocketSlice.reducer;

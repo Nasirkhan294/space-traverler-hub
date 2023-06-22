@@ -16,7 +16,7 @@ export default function RocketList() {
   return (
     <Div>
       {isLoading === true ? <h3>Loading...</h3> : ''}
-      {rockets.map((item) => <Rockets key={item.id} rockets={item} />)}
+      {rockets.map((item) => <Rockets key={item.id} rocket={item} />)}
 
     </Div>
   );
