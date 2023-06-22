@@ -73,6 +73,11 @@ const DIV = styled.div`
     word-spacing: 0;
   }
 
+  .occupied {
+    background-color: #18A2B9;
+    color: #fff;
+  }
+
   table, th, td {
     border: 2px solid #6D757E;
     border-collapse: collapse;
@@ -113,15 +118,25 @@ const DIV = styled.div`
   border: 2px solid #6D757E;
   padding: 0.8rem 1rem;
   background-color: #fff;
-  color: #000;
+  color: #6D757E;
   font-size: 1rem
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: #6D757E;
-  border-color: #000;
-  color: #fff;
+  border-color: #222;
+  color: #000;
   transition: 0.3s ease all;
  }
+
+ .red-btn {
+  border: 2px solid #DD394A;
+  color: #DD394A;
+ }
+
+ .red-btn:hover {
+   border-color: #18A2B9;
+   color: #18A2B9;
+ }
+
 `;

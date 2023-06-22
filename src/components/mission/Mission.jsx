@@ -6,25 +6,33 @@ import { joinMission, leaveMission } from '../../redux/mission/missionSlice';
 const Mission = ({ missionId, title, description }) => {
   const dispatch = useDispatch();
   const [isJoined, setIsJoined] = useState(false);
-  const buttonText = isJoined ? 'Leave Mission' : 'Join Mission';
 
   const handleJoinMission = () => {
-    if (isJoined) {
-      dispatch(leaveMission(missionId));
-    } else {
-      dispatch(joinMission(missionId));
-    }
-    setIsJoined(!isJoined);
+    dispatch(joinMission(missionId));
+    setIsJoined(true);
+  };
+
+  const handleLeaveMission = () => {
+    dispatch(leaveMission(missionId));
+    setIsJoined(false);
   };
 
   return (
     <>
       <td>{title}</td>
       <td>{description}</td>
-      <td><span>NOT A MEMBER</span></td>
       <td>
-        <button type="button" className="btn" onClick={handleJoinMission}>
-          {buttonText}
+        <span className={isJoined ? 'occupied' : ''}>
+          {isJoined ? 'Active member' : 'Not a member'}
+        </span>
+      </td>
+      <td>
+        <button
+          type="button"
+          className={`btn ${isJoined ? 'red-btn' : ''}`}
+          onClick={isJoined ? handleLeaveMission : handleJoinMission}
+        >
+          {isJoined ? 'Leave Mission' : 'Join Mission'}
         </button>
       </td>
     </>
