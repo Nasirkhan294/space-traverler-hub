@@ -6,7 +6,7 @@ export default function Rockets({ rockets }) {
     <Div>
       <div className="container">
         <div className="img-container">
-          <img src={rockets.flickr_images} alt="something" />
+          <img src={rockets.flickr_images[0]} alt="something" />
         </div>
         <div className="detail-container">
           <h3>{rockets.name}</h3>
