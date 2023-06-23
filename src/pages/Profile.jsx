@@ -7,11 +7,13 @@ const Profile = () => {
   const dispatch = useDispatch();
 
   const missions = useSelector((state) => state.missions.missions);
-  const joinedMissions = missions.filter((mission) => mission.member);
+  const joinedMissions = missions.filter((mission) => mission.reserved);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
 
   return (
     <DIV>
@@ -22,7 +24,7 @@ const Profile = () => {
           </tr>
         </thead>
         <tbody>
-          {joinedMissions > 0 ? (
+          {joinedMissions.length > 0 ? (
             joinedMissions.map((mission) => (
               <tr key={mission.mission_id}>
                 <td>{mission.mission_name}</td>

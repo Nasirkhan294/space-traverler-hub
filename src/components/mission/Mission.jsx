@@ -14,7 +14,7 @@ const Mission = ({ mission }) => {
 
   return (
     <tr>
-      <td>{mission.mission_name}</td>
+      <td><span className="mission">{mission.mission_name}</span></td>
       <td>{mission.description}</td>
       {mission.reserved ? (
         <>

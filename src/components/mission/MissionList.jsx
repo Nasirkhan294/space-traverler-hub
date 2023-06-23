@@ -61,6 +61,11 @@ const DIV = styled.div`
   font-size: 1rem;
   word-spacing: 3px;
 
+  .mission {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
   .inActive {
     background-color: #6D757E;
     padding: 0.5rem 1rem;
@@ -90,6 +95,7 @@ const DIV = styled.div`
   }
  
   th {
+    font-size: 1.2rem;
     background-color: #F2F2F2;
     text-align: center;
   }
