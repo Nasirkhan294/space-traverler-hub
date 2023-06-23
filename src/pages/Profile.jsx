@@ -8,6 +8,7 @@ const Profile = () => {
 
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((mission) => mission.member);
+  const { rockets } = useSelector((store) => store.rocket);
 
   useEffect(() => {
     dispatch(fetchMissions());
@@ -38,10 +39,16 @@ const Profile = () => {
           </tr>
         </thead>
         <tbody>
-          <tr><td>rocket 1</td></tr>
-          <tr><td>rocket 2</td></tr>
-          <tr><td>rocket 3</td></tr>
-          <tr><td>rocket 4</td></tr>
+          {rockets.filter((item) => item.reserved === true).map((item) => (
+            <tr key={item.id}>
+              <td>{item.name}</td>
+            </tr>
+          ))}
+          {rockets.filter((item) => !item.reserved).length === rockets.length && (
+          <tr>
+            <td>No Reserved Rocket</td>
+          </tr>
+          )}
         </tbody>
       </table>
     </DIV>
