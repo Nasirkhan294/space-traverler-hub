@@ -9,7 +9,6 @@ const Profile = () => {
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((mission) => mission.member);
   const { rockets } = useSelector((store) => store.rocket);
- 
 
   useEffect(() => {
     if (missions.length === 0) {
