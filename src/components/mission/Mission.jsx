@@ -1,30 +1,50 @@
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../../redux/mission/missionSlice';
 
-const Mission = ({ title, description }) => (
-  <>
-    <td>{title}</td>
-    <td>{description}</td>
-    <td><span>NOT A MEMBER</span></td>
-    <td>
-      <button
-        type="button"
-        style={{
-          border: '2px solid #6D757E',
-          padding: '1rem 1.5rem',
-          backgroundColor: '#fff',
-          color: '#000',
-          fontSize: '1.2rem',
-        }}
-      >
-        Join mission
-      </button>
-    </td>
-  </>
-);
+const Mission = ({ mission }) => {
+  const dispatch = useDispatch();
 
-Mission.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  const handleJoinMission = () => {
+    dispatch(joinMission(mission.mission_id));
+  };
+
+  const handleLeaveMission = () => {
+    dispatch(leaveMission(mission.mission_id));
+  };
+
+  return (
+    <tr>
+      <td>{mission.mission_name}</td>
+      <td>{mission.description}</td>
+      {mission.reserved ? (
+        <>
+          <td>
+            <span className="active">Active Member</span>
+          </td>
+          <td>
+            <button
+              type="button"
+              className="leave-btn"
+              onClick={handleLeaveMission}
+            >
+              Leave Mission
+            </button>
+          </td>
+        </>
+      ) : (
+        <>
+          <td>
+            <span className="inActive">NOT A MEMBER</span>
+          </td>
+          <td>
+            <button type="button" className="join-btn" onClick={handleJoinMission}>
+              Join Mission
+            </button>
+          </td>
+        </>
+      )}
+    </tr>
+  );
 };
 
 export default Mission;

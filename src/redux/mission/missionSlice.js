@@ -19,23 +19,56 @@ const initialState = {
 const missionSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+
+  reducers: {
+    joinMission(state, action) {
+      const missionId = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.mission_id === missionId) {
+          return { ...mission, reserved: true };
+        }
+        return mission;
+      });
+      return {
+        ...state,
+        missions: updatedMissions,
+      };
+    },
+    leaveMission(state, action) {
+      const missionId = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.mission_id === missionId) {
+          return { ...mission, reserved: false };
+        }
+        return mission;
+      });
+      return {
+        ...state,
+        missions: updatedMissions,
+      };
+    },
+  },
+
   extraReducers: (builder) => {
     builder
-      .addCase(fetchMissions.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(fetchMissions.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
 
-      .addCase(fetchMissions.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.missions = action.payload;
-      })
+      .addCase(fetchMissions.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        missions: action.payload,
+      }))
 
-      .addCase(fetchMissions.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      });
+      .addCase(fetchMissions.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.error.message,
+      }));
   },
 });
 
 export default missionSlice.reducer;
+export const { joinMission, leaveMission } = missionSlice.actions;
