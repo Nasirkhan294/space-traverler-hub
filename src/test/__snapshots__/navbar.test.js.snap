@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navibar renders correctly 1`] = `
+<div>
+  <h1>
+    Space mission hub
+  </h1>
+  <ul>
+    <li>
+      <a
+        href="/"
+      >
+        Rockest
+      </a>
+    </li>
+    <li>
+      <a
+        href="/missions"
+      >
+        Missions
+      </a>
+    </li>
+    <li>
+      <a
+        href="/my-profile"
+      >
+        My Profile
+      </a>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,6 +1,5 @@
 /* eslint-disable array-callback-return */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
 
@@ -11,8 +10,8 @@ const initialState = {
 
 export const getRockets = createAsyncThunk('book/getBooks', async (_, thunkAPI) => {
   try {
-    const response = await axios.get(url);
-    return response.data;
+    const response = await fetch(url);
+    return await response.json();
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
   }
@@ -50,6 +49,9 @@ const rocketSlice = createSlice({
         ...state,
         isLoading: true,
       }))
+      // .addCase(getRockets.fulfilled, (state, action) => {
+      //   console.log(action.payload);
+      // })
       .addCase(getRockets.fulfilled, (state, action) => ({
         ...state,
         rockets: action.payload.map((rocket) => ({
