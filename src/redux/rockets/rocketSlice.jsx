@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
@@ -49,9 +48,6 @@ const rocketSlice = createSlice({
         ...state,
         isLoading: true,
       }))
-      // .addCase(getRockets.fulfilled, (state, action) => {
-      //   console.log(action.payload);
-      // })
       .addCase(getRockets.fulfilled, (state, action) => ({
         ...state,
         rockets: action.payload.map((rocket) => ({
