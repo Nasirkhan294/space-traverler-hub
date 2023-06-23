@@ -54,7 +54,9 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li>react.js</li>
+    <li>React</li>
+    <li>Redux</li>
+    <li>Styled Components</li>
   </ul>
 </details>
 
@@ -65,8 +67,8 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **Easy to the eyes and cultivating at the same time**
-- **Dynamic creation of content** 
+- **Reserved Missions  & Rockets functionality**
+- **High Fidelity Design** 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,10 +146,13 @@ To run tests, run the following command:
 <!-- AUTHORS -->
 
 ## 👥 Author <a name="authors"></a>
+👤 **Nasirkhan294**
+
+- GitHub: [Github](https://github.com/Nasirkhan294)
+- Twitter: [Twitter](https://twitter.com/NasirMa35888225)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nasirmahd-8a8/)
 
 👤 **Sumeya Ibrahim**
-
-
 - GitHub: [@isume295](https://github.com/isume295)
 
  
