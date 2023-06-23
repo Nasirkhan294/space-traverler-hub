@@ -9,8 +9,10 @@ const MissionList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
