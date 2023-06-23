@@ -1,11 +1,12 @@
 import { styled } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import Rockets from './Rockets';
 import { getRockets } from '../../redux/rockets/rocketSlice';
 
 export default function RocketList() {
-  const { rockets, isLoading } = useSelector((store) => store.rocket);
+  const rockets = useSelector((state) => state.rocket.rockets);
+  const { isLoading } = useSelector((store) => store.rocket);
   const dispatch = useDispatch();
   useEffect(() => {
     if (rockets.length === 0) {
