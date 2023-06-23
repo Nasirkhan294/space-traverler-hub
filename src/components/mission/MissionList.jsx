@@ -74,7 +74,7 @@ const DIV = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     color: #fff;
-    word-spacing: 0;
+    word-spacing: 0
   }
 
   table, th, td {
