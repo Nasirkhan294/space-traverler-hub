@@ -35,18 +35,12 @@ const MissionList = () => {
             <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
-            <th>-</th>
+            <th>Join</th>
           </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <Mission
-                missionId={mission.mission_id}
-                title={mission.mission_name}
-                description={mission.description}
-              />
-            </tr>
+            <Mission key={mission.mission_id} mission={mission} />
           ))}
         </tbody>
       </table>
@@ -65,7 +59,7 @@ const DIV = styled.div`
   font-size: 1rem;
   word-spacing: 3px;
 
-  span {
+  .inActive {
     background-color: #6D757E;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -73,9 +67,12 @@ const DIV = styled.div`
     word-spacing: 0;
   }
 
-  .occupied {
+  .active {
     background-color: #18A2B9;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     color: #fff;
+    word-spacing: 0;
   }
 
   table, th, td {
@@ -114,29 +111,33 @@ const DIV = styled.div`
     background-color: #F2F2F2;
   }
 
-  .btn {
-  border: 2px solid #6D757E;
-  padding: 0.8rem 1rem;
-  background-color: #fff;
-  color: #6D757E;
-  font-size: 1rem
-}
+  .join-btn {
+    border: 2px solid #6D757E;
+    padding: 0.8rem 1rem;
+    background-color: #fff;
+    color: #6D757E;
+    font-size: 1rem
+  }
 
-.btn:hover {
-  cursor: pointer;
-  border-color: #222;
-  color: #000;
-  transition: 0.3s ease all;
- }
+  .join-btn:hover {
+    cursor: pointer;
+    border-color: #222;
+    color: #000;
+    transition: 0.3s ease all;
+  }
 
- .red-btn {
-  border: 2px solid #DD394A;
-  color: #DD394A;
- }
+  .leave-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 2px solid #DD394A;
+    color: #DD394A;
+  }
 
- .red-btn:hover {
-   border-color: #18A2B9;
-   color: #18A2B9;
- }
+  .leave-btn:hover {
+    border-color: #18A2B9;
+    color: #18A2B9;
+    cursor: pointer
+    transition: 0.3s ease all;
+  }
 
 `;
