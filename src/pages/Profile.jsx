@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { styled } from 'styled-components';
-import { fetchMissions } from '../redux/mission/missionSlice';
 
 const Profile = () => {
-  const dispatch = useDispatch();
-
   const missions = useSelector((state) => state.missions.missions);
-  const joinedMissions = missions.filter((mission) => mission.member);
+  const joinedMissions = missions.filter((mission) => mission.reserved);
   const { rockets } = useSelector((store) => store.rocket);
-
-  useEffect(() => {
-    if (missions.length === 0) {
-      dispatch(fetchMissions());
-    }
-  }, []);
 
   return (
     <DIV>
