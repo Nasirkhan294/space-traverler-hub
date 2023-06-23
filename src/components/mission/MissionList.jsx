@@ -19,7 +19,7 @@ const MissionList = () => {
   if (error) {
     return (
       <p>
-        `
+        return `
         Error
         {error.message}
         `
