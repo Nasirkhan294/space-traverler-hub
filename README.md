@@ -18,8 +18,8 @@
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
@@ -33,14 +33,14 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Redux Blog <a name="about-project"></a>
+# 📖 Space Traveler's Hub <a name="about-project"></a>
 
-**Redux Blog:** This repository contains a concise and comprehensive Crud application developed using React, Redux, and Ant-design. The application facilitates the creation, reading, updating, and deletion of tasks from a list. It serves as an excellent resource for individuals interested in acquiring knowledge in web development or aiming to construct their personalized task management application.
+**Space Traveler's Hub:** This GitHub repository serves as a comprehensive data fetching solution for SpaceX missions and rockets using the external API provided by api.spacexdata.com. The repository has been developed and maintained by a team of two dedicated members, leveraging their expertise in web development and data integration.
 
 ## 🛠 Built With <a name="built-with"></a>
 
   <ul>
-    <li>Ant Design</li>
+    <li>Styled Component</li>
     <li>React</li>
     <li>Redux</li>
   </ul>
@@ -50,7 +50,7 @@
 ### Key Features <a name="key-features"></a>
 
 - [x] **Single Page App**
-- [x] **Reserved Missions  & Rockets functionality**
+- [x] **Reserved Missions & Rockets functionality**
 - [x] **Medium Fidelity Design**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,7 +75,7 @@ In order to run this project you need:
 
 ```
    ssh code:
-   git@github.com:Nasirkhan294/reduxblog.git
+   git@github.com:Nasirkhan294/space-traverler-hub.git
 ```
 
 ### Setup
@@ -84,7 +84,7 @@ Clone this repository to your desired folder:
 
 ```
   cd desired-folder
-  git clone git@github.com:Nasirkhan294/reduxblog.git
+  git clone git@github.com:Nasirkhan294/space-traverler-hub.git
 ```
 
 ### Install
