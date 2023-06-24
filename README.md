@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Project Demo]()
+- [Live Project Demo](https://space-traverler-hub.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
