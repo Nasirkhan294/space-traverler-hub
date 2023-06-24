@@ -4,18 +4,9 @@
   <img src="src/assets/logo3.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h1><b>Welcome to our project 😃</b></h1>
+  <h1><b>Welcome to Space Traveler's Hub 😃</b></h1>
 
 </div>
-
-
-<div align="center">
-  
-  <br/>
-<h1 align="center">Space Traveler's Hub</h1>
-</div>
-
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -23,101 +14,78 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  <!-- - [🚀 Live Demo ](#-live-demo-) -->
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-  - [👥 Author ](#-author-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+  - [🛠 Built With](#built-with)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [:question: FAQ](#faq)
+- [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Space Traveler's Hub] <a name="about-project"></a>
+# 📖 Redux Blog <a name="about-project"></a>
 
-
-**Space Travelers Hub webiste** Space traveler hub is a project that houses missions and rockets. It fetches data from an external API and render it into react components.
+**Redux Blog:** This repository contains a concise and comprehensive Crud application developed using React, Redux, and Ant-design. The application facilitates the creation, reading, updating, and deletion of tasks from a list. It serves as an excellent resource for individuals interested in acquiring knowledge in web development or aiming to construct their personalized task management application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
-
-<details>
-  <summary>Client</summary>
   <ul>
+    <li>Ant Design</li>
     <li>React</li>
     <li>Redux</li>
-    <li>Styled Components</li>
   </ul>
-</details>
-
-
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-
-- **Reserved Missions  & Rockets functionality**
-- **High Fidelity Design** 
+- [x] **Single Page App**
+- [x] **Reserved Missions  & Rockets functionality**
+- [x] **Medium Fidelity Design**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- LIVE DEMO -->
-<!-- 
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
+- [Live Project Demo]()
 
-- [comming soon] 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps:
-
-- Clone this repo as described in the setup section. 
-- Make modifications as peferred 
-
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need: To clone or fork and run it in a browser
+In order to run this project you need:
 
+```
+   ssh code:
+   git@github.com:Nasirkhan294/reduxblog.git
+```
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-Example commands:
-
-```sh
-  cd my-folder
-  git clone https://github.com/Nasirkhan294/space-traverler-hub
-
-using Ubuntu:
-
-```sh
-  cd my-desired-folder
-  git clone https://github.com/Nasirkhan294/space-traverler-hub
 ```
-
-For more information on how to clone or fork a repository:
-- <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">How to clone a repo</a>
-- <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">How to fork a repo</a>
+  cd desired-folder
+  git clone git@github.com:Nasirkhan294/reduxblog.git
+```
 
 ### Install
 
@@ -127,25 +95,34 @@ For more information on how to clone or fork a repository:
 
 To run the project, execute the following command:
 
-- Run `npm start`
+- Run ` npm start `
 
 ### Run tests
 
 To run tests, run the following command:
 
 
-- to test CSS linter errors `npx stylelint "**/*.{css,scss}"`
+- To Test CSS linter errors 
+```
+npx stylelint "**/*.{css,scss}
+```
 
-- to test jsx linter errors  `npx eslint "**/*.{js,jsx}"`
+- To Test jsx linter errors  
+```
+npx eslint "**/*.{js,jsx}
+```
 
-- to run test files `npx jest`
-
+- To Run Test files 
+```
+npx jest
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Author <a name="authors"></a>
+
 👤 **Nasirkhan294**
 
 - GitHub: [Github](https://github.com/Nasirkhan294)
@@ -153,19 +130,18 @@ To run tests, run the following command:
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nasirmahd-8a8/)
 
 👤 **Sumeya Ibrahim**
+
 - GitHub: [@isume295](https://github.com/isume295)
 
  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-
-Future changes:
-- Add animations and transitions
-- Add more styles and colors
+- [ ] **Advanced Styles**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,7 +151,7 @@ Future changes:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Nasirkhan294/space-traverler-hub/issues).
+Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,8 +159,7 @@ Feel free to check the [issues page](https://github.com/Nasirkhan294/space-trave
 
 ## ⭐️ Show your support <a name="support"></a>
 
-
-Give a ⭐️ if you like this project!
+Please support this project and be a part of something meaningful and impactful. Your contribution can make a significant difference and help us achieve our goals faster.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,35 +167,26 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-
-- Thanks to all Microverse community
-
+To all the individuals whose creativity and dedication inspired the codebase, I want to express my heartfelt gratitude. Your tireless efforts have left an indelible mark on this project and your contributions will be remembered for years to come. Thank you for being an integral part of our success.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) 
+## :question: FAQ <a name="faq"></a>
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+- **Can I fork and reuse this repository?**
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+Absolutely! Please feel free to fork and reuse this repository for your own projects.
 
-- **[Question_1]**
+- **Is it okay to improve this repository? Will my changes be accepted?**
 
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+Definitely! We welcome any improvements or new ideas you may have. If your changes are good and align with the project's goals, we would be happy to accept them.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
--->
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
